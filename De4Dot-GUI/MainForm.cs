@@ -35,6 +35,7 @@ namespace De4DotGUI
                 txtInput.Text = filename;
                 Regex regex = new Regex(@"(?<filename>.+?)(?<extension>\..+?)$", RegexOptions.CultureInvariant);
                 Match match = regex.Match(filename);
+                // Bug is if the full path contains some dot other than in the suffix of file extension, such as dot in folder name or file name, the automated path of output file will break. No fix yet, user has to specify it manually.
                 txtOutput.Text = match.Groups.Count > 0 ? String.Format("{0}_de4dot{1}", match.Groups["filename"].Value, match.Groups["extension"].Value) : String.Format("{0}_de4dot", filename);
             }
         }
@@ -58,13 +59,13 @@ namespace De4DotGUI
         {
             if (!File.Exists(txtInput.Text))
             {
-                MessageBox.Show("Input file doesn't exists!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("输入文件不存在！", "错误！", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (txtInput.Text == txtOutput.Text)
             {
-                MessageBox.Show("Output file must be different from input file!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("输出文件必须与输入文件不一致！", "错误！", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -74,7 +75,7 @@ namespace De4DotGUI
 
             if (!File.Exists(exeName))
             {
-                MessageBox.Show(exeName + " not found! de4dot must be in the same directory of this program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exeName + "此文件无法找到！de4dot必须与此图形界面程序在同一文件目录内。", "错误！", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -96,18 +97,18 @@ namespace De4DotGUI
 
             try
             {
-                txtOut.AppendText(String.Format("=== START NEW DEOBFUSCATION ==={0}{0}Command: {1}{0}Output:{0}", "\r\n", String.Format("{0} {1}", exeName, arguments)));
+                txtOut.AppendText(String.Format("=== 反混淆开始 ==={0}{0}命令行： {1}{0}输出：{0}", "\r\n", String.Format("{0} {1}", exeName, arguments)));
                 de4dot.Start();
                 while (!de4dot.StandardOutput.EndOfStream)
                     txtOut.AppendText(String.Format("{0}{1}", de4dot.StandardOutput.ReadLine(), "\r\n"));
             }
             catch (System.ComponentModel.Win32Exception)
             {
-                MessageBox.Show("This program must be in the same folder of de4dot", "Err0r!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("此程序必须与de4dot在同一个文件夹内！", "错误！", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                txtOut.AppendText(String.Format("{0}{0}=== END OF DEOBFUSCATION ==={0}{0}", "\r\n"));
+                txtOut.AppendText(String.Format("{0}{0}=== 反混淆结束 ==={0}{0}", "\r\n"));
             }
         }
 
