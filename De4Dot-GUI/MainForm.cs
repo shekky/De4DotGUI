@@ -110,5 +110,10 @@ namespace De4DotGUI
                 txtOut.AppendText(String.Format("{0}{0}=== END OF DEOBFUSCATION ==={0}{0}", "\r\n"));
             }
         }
-	}
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("iexplore.exe", "https://github.com/Tianjiao/de4dot/blob/master/%E8%87%B4%E4%B8%AD%E5%9B%BD%E5%8C%BA%E7%94%A8%E6%88%B7%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1.md");
+        }
+    }
 }
