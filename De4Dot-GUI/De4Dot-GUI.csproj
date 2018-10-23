@@ -13,7 +13,7 @@
     <ApplicationIcon>
     </ApplicationIcon>
     <NoWin32Manifest>False</NoWin32Manifest>
-    <SignAssembly>False</SignAssembly>
+    <SignAssembly>true</SignAssembly>
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
@@ -52,6 +52,9 @@
   <PropertyGroup>
     <StartupObject>De4DotGUI.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\De4DotGUI.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -77,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
+    <None Include="..\De4DotGUI.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
