@@ -162,7 +162,7 @@
             // 
             // txtOut
             // 
-            this.txtOut.BackColor = System.Drawing.Color.Black;
+            this.txtOut.BackColor = System.Drawing.Color.Purple;
             this.txtOut.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtOut.ForeColor = System.Drawing.Color.White;
             this.txtOut.Location = new System.Drawing.Point(12, 426);
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(445, 597);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.label4);
