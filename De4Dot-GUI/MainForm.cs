@@ -35,7 +35,6 @@ namespace De4DotGUI
                 txtInput.Text = filename;
                 Regex regex = new Regex(@"(?<filename>.+?)(?<extension>\..+?)$", RegexOptions.CultureInvariant);
                 Match match = regex.Match(filename);
-                // Bug is if the full path contains some dot other than in the suffix of file extension, such as dot in folder name or file name, the automated path of output file will break. No fix yet, user has to specify it manually.
                 txtOutput.Text = match.Groups.Count > 0 ? String.Format("{0}_de4dot{1}", match.Groups["filename"].Value, match.Groups["extension"].Value) : String.Format("{0}_de4dot", filename);
             }
         }
@@ -111,14 +110,5 @@ namespace De4DotGUI
                 txtOut.AppendText(String.Format("{0}{0}=== END OF DEOBFUSCATION ==={0}{0}", "\r\n"));
             }
         }
-
-        private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
-        {
-            // Specify that the link was visited.
-            this.linkLabel1.LinkVisited = true;
-
-            // Navigate to a URL.
-            System.Diagnostics.Process.Start("iexplore.exe", "https://github.com/Tianjiao/de4dot/blob/master/%E8%87%B4%E4%B8%AD%E5%9B%BD%E5%8C%BA%E7%94%A8%E6%88%B7%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1.md");
-        }
-    }
+	}
 }
