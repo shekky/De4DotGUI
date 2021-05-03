@@ -35,6 +35,7 @@ namespace De4DotGUI
                 txtInput.Text = filename;
                 Regex regex = new Regex(@"(?<filename>.+?)(?<extension>\..+?)$", RegexOptions.CultureInvariant);
                 Match match = regex.Match(filename);
+                // Bug is if the full path contains some dot other than in the suffix of file extension, such as dot in folder name or file name, the automated path of output file will break. No fix yet, user has to specify it manually.
                 txtOutput.Text = match.Groups.Count > 0 ? String.Format("{0}_de4dot{1}", match.Groups["filename"].Value, match.Groups["extension"].Value) : String.Format("{0}_de4dot", filename);
             }
         }
