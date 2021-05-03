@@ -64,7 +64,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
-            this.label1.Text = "输入文件：";
+            this.label1.Text = "Input file:";
             // 
             // txtInput
             // 
@@ -109,7 +109,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "输出文件：";
+            this.label2.Text = "Output file:";
             // 
             // label3
             // 
@@ -118,7 +118,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 7;
-            this.label3.Text = "附加选项：";
+            this.label3.Text = "Additional options:";
             // 
             // txtAdditional
             // 
@@ -137,7 +137,7 @@
             this.rbt32Bit.Size = new System.Drawing.Size(47, 16);
             this.rbt32Bit.TabIndex = 9;
             this.rbt32Bit.TabStop = true;
-            this.rbt32Bit.Text = "32位";
+            this.rbt32Bit.Text = "32 Bit";
             this.rbt32Bit.UseVisualStyleBackColor = true;
             // 
             // rbt64Bit
@@ -147,7 +147,7 @@
             this.rbt64Bit.Name = "rbt64Bit";
             this.rbt64Bit.Size = new System.Drawing.Size(47, 16);
             this.rbt64Bit.TabIndex = 10;
-            this.rbt64Bit.Text = "64位";
+            this.rbt64Bit.Text = "64 Bit";
             this.rbt64Bit.UseVisualStyleBackColor = true;
             // 
             // btnWork
@@ -157,7 +157,7 @@
             this.btnWork.Name = "btnWork";
             this.btnWork.Size = new System.Drawing.Size(421, 21);
             this.btnWork.TabIndex = 11;
-            this.btnWork.Text = "开始执行！";
+            this.btnWork.Text = "work!";
             this.btnWork.UseVisualStyleBackColor = true;
             this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
             // 
@@ -181,7 +181,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 12);
             this.label4.TabIndex = 12;
-            this.label4.Text = "控制台输出：";
+            this.label4.Text = "Output:";
             // 
             // linkLabel1
             // 
@@ -222,7 +222,7 @@
             this.Name = "MainForm";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "De4Dot图形界面，Tianjiao修改，原作者V0K3";
+            this.Text = "De4Dot GUI - V0K3";
             ((System.ComponentModel.ISupportInitialize)(this.picIF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
